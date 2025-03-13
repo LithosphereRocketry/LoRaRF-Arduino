@@ -44,18 +44,18 @@ class BaseLoRa
 
     public:
 
-        virtual void beginPacket();
-        virtual bool endPacket(uint32_t timeout);
-        virtual void write(uint8_t data);
-        virtual void write(uint8_t* data, uint8_t length);
+        virtual void beginPacket() = 0;
+        virtual bool endPacket(uint32_t timeout) = 0;
+        virtual void write(uint8_t data) = 0;
+        virtual void write(uint8_t* data, uint8_t length) = 0;
 
-        virtual bool request(uint32_t timeout);
-        virtual uint8_t available();
-        virtual uint8_t read();
-        virtual uint8_t read(uint8_t* data, uint8_t length);
+        virtual bool request(uint32_t timeout) = 0;
+        virtual uint8_t available() = 0;
+        virtual uint8_t read() = 0;
+        virtual uint8_t read(uint8_t* data, uint8_t length) = 0;
 
-        virtual bool wait(uint32_t timeout);
-        virtual uint8_t status();
+        virtual bool wait(uint32_t timeout) = 0;
+        virtual uint8_t status() = 0;
 
 };
 
