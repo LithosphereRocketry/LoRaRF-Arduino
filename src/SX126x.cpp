@@ -254,9 +254,9 @@ void SX126x::setTxPower(uint8_t txPower, uint8_t version)
         paDutyCycle = 0x00;
         hpMax = 0x03;
         power = 0x0F;
-    } else {
-        return;
     }
+    // There shouldn't have been an `else` here:
+    // https://github.com/chandrawi/LoRaRF-Arduino/issues/16
 
     // set power amplifier and TX power configuration
     sx126x_setPaConfig(paDutyCycle, hpMax, deviceSel, 0x01);
